@@ -9,7 +9,7 @@ class GGController extends Controller
     public function index ()
     {
         $todos=Gg::all();
-        // dd($todos);
+        // dd($todos);in
         return view('gg.index')->with('todos',$todos);
 
     }
@@ -27,7 +27,7 @@ class GGController extends Controller
 
         //3
         $todo=Gg::create($request->all());
-        return view('gg.index');
+        return redirect('gg');
         
     }
 }
