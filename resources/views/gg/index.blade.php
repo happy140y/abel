@@ -1,3 +1,8 @@
+
+<!-- {{ $todos }} -->
+@foreach ($todos as $value)
+    <p>{{ $value->id . '.' . $value->title }}</p>
+@endforeach
 <form action ="/gg" method="POST">
     {{ csrf_field() }}
     "booktitle:"

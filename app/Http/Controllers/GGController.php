@@ -8,10 +8,12 @@ class GGController extends Controller
 {
     public function index ()
     {
-        return view('gg.index');
-   
+        $todos=Gg::all();
+        // dd($todos);
+        return view('gg.index')->with('todos',$todos);
+
     }
-    public function update (Request $request)
+    public function update (Request  $request)
     {
         //1 $todo =new Gg();
         // $todo->title=$request->title;
@@ -22,10 +24,10 @@ class GGController extends Controller
         //     'title'=>$request->title,
         //     'qty'=>$request->qty,
         // ]);
-        
+
         //3
         $todo=Gg::create($request->all());
-        return $todo;
+        return view('gg.index');
         
     }
 }
