@@ -13,7 +13,7 @@ class GGController extends Controller
         return view('gg.index')->with('todos',$todos);
 
     }
-    public function update (Request  $request)
+    public function insert (Request  $request)
     {
         //1 $todo =new Gg();
         // $todo->title=$request->title;
@@ -30,12 +30,34 @@ class GGController extends Controller
         return redirect('gg');
         
     }
-    public function destroy(Request  $request,Gg $id)
+    public function update(Gg $id)
+    {
+        //$input=Input::all();
+
+        $todo=Gg::find($id);
+       // $todo->title=$input['title'];
+       // $todo->qty='30678';
+        $todo->save();
+        dd($todo);
+        return Redirect('gg');
+    
+             
+
+    }
+    public function destroy(Gg $id)
     {
         
         $id->delete();
         return redirect('gg');
-              
+      
 
     }
+    public function edit(Gg $id)
+    {
+        $todo=Gg::find($id);
+        //dd($todo);
+        return view('gg.edit')->with('todo',$todo);
+
+    }
+   
 }

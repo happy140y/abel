@@ -16,5 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/gg','GGController@index');
-Route::post('/gg','GGController@update');
-Route::delete('/gg/{id}/delete','GGController@destroy');
+Route::post('/gg','GGController@insert');
+Route::get('/gg/{id}/edit','GGController@edit');
+Route::put('/gg/{id}','GGController@update');
+Route::delete('/gg/{id}','GGController@destroy');

@@ -12,8 +12,10 @@
 
 @foreach ($todos as $value)
     <p>{{ $value->id . '.' . $value->title . ':' .$value->qty}}</p>
-   
-    {!! Form::open(['url'=>'gg/'.$value->id.'/delete', 'method'=>'delete']) !!}
-    <button type="submit">刪除</button>
+    {!! Form::open(['url'=>'gg/'.$value->id.'/edit', 'method'=>'get']) !!}
+    <button type="submit">EDIT</button>
+    {!! Form::close() !!}
+    {!! Form::open(['url'=>'gg/'.$value->id, 'method'=>'delete']) !!}
+    <button type="submit">DELETE</button>
     {!! Form::close() !!}
 @endforeach
