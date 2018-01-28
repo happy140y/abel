@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Gg extends Model
 {
     protected $fillable = [
-        'title', 'qty',
+        'id','title', 'qty',
     ];
 }
