@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/gg','GGController@index');
+Route::post('/gg','GGController@update');
