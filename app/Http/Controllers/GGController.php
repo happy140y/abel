@@ -30,4 +30,11 @@ class GGController extends Controller
         return redirect('gg');
         
     }
+    public function destroy(Request  $request,Gg $id)
+    {
+        $id->delete();
+        return redirect('gg');
+              
+
+    }
 }

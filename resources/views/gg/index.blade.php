@@ -10,5 +10,10 @@
     <input type="submit" value="submit"> 
 </form>
 @foreach ($todos as $value)
-    <p><tr>{{ $value->id . '.' . $value->title . ':' .$value->qty}}</tr></p>
+    <p>{{ $value->id . '.' . $value->title . ':' .$value->qty}}</p>
+    <!-- <a href="gg/{{$value->id}}">Delete</a> -->
+    <form action="/gg/{{$value->id}}" method="POST">
+    {{ csrf_field() }}
+    {{ method_field('DELETE') }}
+    <input type="submit" value="Delete"> 
 @endforeach
