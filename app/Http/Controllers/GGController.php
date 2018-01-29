@@ -30,16 +30,21 @@ class GGController extends Controller
         return redirect('gg');
         
     }
-    public function update(Gg $id)
-    {
-        //$input=Input::all();
-
-        $todo=Gg::find($id);
-       // $todo->title=$input['title'];
-       // $todo->qty='30678';
-        $todo->save();
-        dd($todo);
+    public function update(Request  $request,Gg $id)
+    { 
+        $post = Gg::find($id);
+        $post->title =$request->title;
+        $post->qty =$request->qty;
+        $post->save();sssssssssssssssssssssssss
         return Redirect('gg');
+    //     $input=Input::all();
+    //     $todo=new Gg();
+    //     $list=Gg::find($id);
+    //    //$todo->title=$list->title;
+    //    //$todo->qty='30678';
+    //     //$todo->save();
+    //     //dd($todo);
+    //     return $list;//Redirect('gg');
     
              
 
